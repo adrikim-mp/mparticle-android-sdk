@@ -15,10 +15,10 @@ jobs:
     uses: mParticle/mparticle-workflows/.github/workflows/pr-branch-target-gitflow.yml@stable
   set-semgrep-configs:
     name: "Grab configs"
-    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@stable
+    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@main
   run-semgrep:
     name: "Run Semgrep"
-    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@stable
+    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@main
   run-mobsfscan:
     name: "Run mobsfscan"
-    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@stable
+    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@main
