@@ -145,12 +145,8 @@ jobs:
         - name: "Run Kit Release Tests and Build"
           run: ./gradlew -PisRelease=true -p kits testRelease -c ../settings-kits.gradle
 
-  run-semgrep:
-    name: "Run Semgrep test"
-    uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@ci/add-security-linting
-
-  run-mobsfscan:
-    name: "Run mobsfscan test"
+  run-static-analysis:
+    name: "Run Semgrep and mobsfscan"
     uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@ci/add-security-linting
 
   automerge-dependabot:
