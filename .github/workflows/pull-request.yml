@@ -148,6 +148,8 @@ jobs:
   run-static-analysis:
     name: "Run Semgrep and mobsfscan"
     uses: adrikim-mp/mparticle-workflows/.github/workflows/security-checks.yml@ci/add-security-linting
+    with:
+      base_branch: "development"
 
   automerge-dependabot:
     name: "Save PR Number for Dependabot Automerge"
