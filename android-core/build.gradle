@@ -7,7 +7,8 @@ apply from: '../scripts/maven.gradle'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 31
+    namespace 'com.mparticle'
+    compileSdk 33
     packagingOptions {
         exclude 'META-INF/LICENSE'
     }
@@ -42,8 +43,8 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdk 31
+        minSdk 14
+        targetSdk 33
         versionName project.version.toString().replace('-SNAPSHOT', '')
         versionCode Integer.parseInt(new Date().format('yyyyMMdd'))
 
@@ -134,7 +135,7 @@ dependencies {
     api 'androidx.annotation:annotation:[1.0.0,)'
     compileOnly 'androidx.core:core:[1.3.2, )'
 
-    api 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    api 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
 
     lintPublish project( path: ':tooling:custom-lint-rules', configuration: 'lintBuild')
 

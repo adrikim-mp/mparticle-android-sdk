@@ -16,7 +16,7 @@ You can grab the Core SDK via Maven Central. Please see the badge above and foll
 
 ```groovy
 dependencies {
-    implementation 'com.mparticle:android-core:5.44.2'
+    implementation 'com.mparticle:android-core:5.47.0'
 }
 ```
 
@@ -27,8 +27,8 @@ Several integrations require additional client-side add-on libraries called "kit
 ```groovy
 dependencies {
     implementation (
-        'com.mparticle:android-example-kit:5.44.2',
-        'com.mparticle:android-another-kit:5.44.2'
+        'com.mparticle:android-example-kit:5.47.0',
+        'com.mparticle:android-another-kit:5.47.0'
     )
 }
 ```
@@ -79,8 +79,18 @@ Kit | Maven Artifact
 The Google Play Services Ads framework is necessary to collect the Android Advertisting ID. AAID collection is required by all attribution and audience integrations, and many other integrations. Include the `-ads` artifact, a subset of [Google Play Services](https://developers.google.com/android/guides/setup):
 
 ```groovy
-    implementation 'com.google.android.gms:play-services-ads:11.6.2'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 ```
+
+If your app does not declare this permission when targeting Android 13 or higher, the advertising ID is automatically removed and replaced with a string of zeroes.
+
+When apps target Android 13 or above, you will need to declare a Google Play services permission in the manifest file as follows:
+
+```xml
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+```
+
+For more information, please check out this link: [https://support.google.com/googleplay/android-developer/answer/6048248?hl=en](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en)
 
 ##### Firebase Cloud Messaging
 
